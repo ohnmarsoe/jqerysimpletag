@@ -1,0 +1,85 @@
+<html>
+<title>Simple Tags</title>
+<head>
+<style type="text/css">
+	.post-demo {
+    width: 70%;
+    padding: 40px 0;
+    margin: 0 auto 40px;
+	}
+	#tab li {
+    float: left;
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-left: 0%;
+    cursor: pointer;
+    font-size: 20px;
+
+	}
+	#tab-content li {
+    padding: 200px 5%;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.6;
+    font-weight: 700;
+    list-style: none;
+	}
+	#tab li.select {
+	  background: # 0cc;
+	  color: #fff;
+	}
+	.display-none {
+	  display: none;
+	}
+	.back-01{
+		background-color: #69C0E4;
+	}
+	.back-02{
+		background-color: #F78578;
+	}
+	.back-03{
+		background-color: #17D1C6;
+	}
+	.back-04{
+		background-color: #E4EA6C;
+	}
+	.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+	}
+</style>
+<script  type ="text/JavaScript"  src ="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js?Ver=1.10.1"> 
+</script>
+<script type="text/javascript">
+	$ ( function () {
+    $ ( "#tab li" ) .click ( function () {
+       var  num = $ ( "#tab li" ) .index (this);
+       console.log(num);
+       $ ( "#tab-content li").addClass('display-none');
+       $ ( "#tab-content li").eq(num) .removeClass('display-none');
+       $ ( "#tab li").removeClass('select');
+       $ (this).addClass ('select')
+    });
+ });
+</script>
+</head>
+<body>
+<div class="post-demo">
+	<ul  id = "tab" class="clearfix">
+	 <li class="back-01 select" > tab 1 </li>
+	 <li class="back-02"> tab 2 </li>
+	 <li class="back-03"> tab 3 </li>
+	 <li class="back-04"> tab 4 </li>
+	</ul>
+	 
+	<ul  id = "tab-content" >
+	 <li class="back-01"> the contents of the tab 1 </li >
+	 <li  class ="back-02 display-none"> contents of the tab 2 </li>
+	 <li  class ="back-03 display-none"> contents of the tab 3 </li>
+	 <li  class ="back-04 display-none"> contents of the tab tab 4 </li>
+	</ul>
+</div>
+</body>
+</html>
